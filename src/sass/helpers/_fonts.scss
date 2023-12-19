@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@300;400;700&display=swap");
+
+$logo: "Abril Fatface", serif;
+$base: "Lato", sans-serif;
+
+// Make Fonts Size Responsive
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+p {
+  font-size: clamp(1rem, 4vw, 1.3rem);
+}

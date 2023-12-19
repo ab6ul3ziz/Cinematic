@@ -1,0 +1,32 @@
+$themes: (
+  light: (
+    text: #180222,
+    background: #fdfaff,
+    primary: #f2b32c,
+    secondary: #eccafc,
+    accent: #0feba5,
+    border: #0000001a,
+  ),
+  dark: (
+    text: #f3ddfd,
+    background: #030005,
+    primary: #d3940d,
+    secondary: #250335,
+    accent: #14f0aa,
+    border: #ffffff1a,
+  ),
+);
+
+html[data-theme="dark"] {
+  @each $key, $value in map-get($themes, dark) {
+    --#{$key}: #{$value};
+  }
+}
+
+html[data-theme="light"] {
+  @each $key, $value in map-get($themes, light) {
+    --#{$key}: #{$value};
+  }
+}
+
+$main-transition: 0.3s;

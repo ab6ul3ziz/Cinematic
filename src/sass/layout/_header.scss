@@ -1,0 +1,83 @@
+@use "../helpers/index" as *;
+
+.header {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--secondary);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  .container {
+    @include flex-between;
+    .logo {
+      height: 55px;
+      .icon {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        stroke-width: 0;
+        stroke: currentColor;
+        fill: currentColor;
+      }
+      .icon-camera {
+        font-size: 32px;
+        color: var(--text);
+      }
+      @include flex-center;
+    }
+    .logo-link {
+      padding: 5px;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      color: var(--text);
+      font-family: $logo;
+    }
+  }
+}
+
+.navbar-toggle {
+  @include media("md") {
+    display: none;
+  }
+  position: relative;
+  padding: 10px;
+  border-color: transparent;
+  background-color: transparent;
+  transition: all $main-transition ease-in-out;
+  .icon-bar {
+    transition: all $main-transition ease-in-out;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: var(--text);
+    right: 0px;
+    transform: translateY(-50%);
+    &:nth-child(1) {
+      top: 2px;
+    }
+    &:nth-child(2) {
+      top: 50%;
+    }
+    &:nth-child(3) {
+      bottom: 1px;
+    }
+  }
+  &.true {
+    .icon-bar:nth-child(1) {
+      top: 2px;
+      top: 6px;
+      width: 10px;
+      transform: rotate(45deg);
+      right: -2px;
+    }
+    .icon-bar:nth-child(3) {
+      bottom: 2px;
+      transform: rotate(-45deg);
+      right: -2px;
+      width: 11px;
+      top: 13px;
+    }
+  }
+}

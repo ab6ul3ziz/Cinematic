@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-theme>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="cinematic, Get the latest movie news, reviews, trailers and more" />
+    <title>Cinematic</title>
+    <link rel="stylesheet" href="src/sass/style.css" media="all" type="text/css" />
+    <link rel="stylesheet" href="node_modules/line-awesome/dist/line-awesome/css/line-awesome.min.css" media="all"
+        type="text/css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <defs>
+                        <symbol id="icon-camera" viewBox="0 0 32 32">
+                            <path
+                                d="M27 17.047l-5-2.003v-4.008l5-2.004c0.553 0 1 0.449 1 1.002v6.012c0 0.553-0.447 1.001-1 1.001zM17.5 10.033c-2.485 0-4.5-2.019-4.5-4.509s2.015-4.509 4.5-4.509 4.5 2.019 4.5 4.509c0 2.491-2.015 4.509-4.5 4.509zM8.5 10.033c-2.485 0-4.5-2.019-4.5-4.509s2.015-4.509 4.5-4.509 4.5 2.019 4.5 4.509c0 2.491-2.015 4.509-4.5 4.509zM21 10.033v9.018h-5.582c-0.052 0.832-0.416 1.549-0.957 1.955h0.564l3.989 8.996h-0.994l-1.33-3h-2.66v4.998h-0.997v-4.998h-2.702l-1.351 3h-0.995l4.052-8.996h0.377c-0.541-0.406-0.905-1.123-0.957-1.955h-6.457v-9.018h16zM13.032 21.316c-0.041-0.010-0.079-0.031-0.119-0.045l-2.132 4.732h2.251v-4.687zM14.029 21.244v4.76h2.217l-2.126-4.795c-0.029 0.014-0.059 0.023-0.091 0.035z">
+                            </path>
+                        </symbol>
+                    </defs>
+                </svg>
+                <svg class="icon icon-camera">
+                    <use xlink:href="#icon-camera"></use>
+                </svg>
+                <a class="logo-link" href="index.html">cinematic</a>
+            </div>
+            <nav id="nav">
+                <ul class="nav-links">
+                    <li><a href="#Search-section" class="nav-link">Search</a></li>
+                    <li><a href="#Popular-Section" class="nav-link">Popular</a></li>
+                    <li><a href="#Upcoming-Section" class="nav-link">Upcoming</a></li>
+                    <li><a href="#Top-rated-Section" class="nav-link">Top Rated</a></li>
+                </ul>
+            </nav>
+            <button type="button" class="navbar-toggle" aria-label="button" name="button">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container">
+            <section>
+                <h1>Movies in Theaters</h1>
+                <div class="flex-container" id="Movies-in-Theaters"></div>
+            </section>
+            <section id="Popular-Section">
+                <h1>popular</h1>
+                <div class="flex-container" id="popular"></div>
+            </section>
+            <section id="Upcoming-Section">
+                <h1>upcoming</h1>
+                <div class="flex-container" id="upcoming"></div>
+            </section>
+            <section id="Top-rated-Section">
+                <h1>top rated</h1>
+                <div class="flex-container" id="top-rated"></div>
+            </section>
+            <section id="Search-section">
+                <form id="form" class="form" onsubmit="return false">
+                    <span class="outline">
+                        <input type=" text" placeholder="Search" id="search" class="search" />
+                    </span>
+                    <div class="serach-icon">
+                        <i class="la la-search la-2x"></i>
+                    </div>
+                </form>
+                <div class="grid-container" id="serach-result"></div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <span>Made With &hearts; by <a href="#">Abdulaziz Salah</a></span>
+        </div>
+    </footer>
+    <script src="/src/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+@use "../helpers/index" as *;
+
+footer {
+  padding: 30px 0;
+  color: var(--text);
+  background-color: var(--secondary);
+  text-align: center;
+  a {
+    color: var(--text);
+    text-decoration: underline;
+  }
+}

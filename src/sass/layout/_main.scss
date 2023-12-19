@@ -1,0 +1,155 @@
+@use "../helpers/index" as *;
+
+.main {
+  margin: 15px 0;
+}
+section {
+  padding-top: 65px;
+}
+.flex-container {
+  display: flex;
+  overflow-x: scroll;
+  padding: 10px 0 5px;
+  &::-webkit-scrollbar {
+    height: 3px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+  }
+}
+.grid-container {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+.flex-container,
+.grid-container {
+  gap: 20px;
+  .card {
+    max-width: 220px;
+    .image {
+      width: 220px;
+      height: 330px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      > img {
+        height: 100%;
+        width: 100%;
+      }
+      &:hover {
+        > img {
+          filter: blur(5px);
+        }
+        .overview {
+          top: 0;
+        }
+      }
+      .overview {
+        position: absolute;
+        top: 350px;
+        padding: 5px;
+        background-color: #0000008c;
+        height: 100%;
+        transition: $main-transition;
+        display: flex;
+        flex-direction: column;
+        > p {
+          flex: 1;
+          overflow-y: auto;
+          -moz-overflow-y: auto;
+          -o-overflow-y: auto;
+          -ms-overflow-y: auto;
+          color: #f3ddfd;
+          &::-webkit-scrollbar {
+            width: 3px;
+          }
+          &::-webkit-scrollbar-thumb {
+            background-color: var(--primary);
+          }
+        }
+        .watch-trailer {
+          text-align: center;
+          padding: 5px;
+          width: fit-content;
+          margin: 10px auto;
+          font-weight: bold;
+          background-color: var(--primary);
+          color: var(--text);
+          border-radius: 6px;
+          transition: $main-transition;
+          &:hover {
+            scale: 0.9;
+          }
+        }
+      }
+    }
+  }
+  & .content {
+    padding-top: 10px;
+    position: relative;
+    > .title {
+      margin-right: 42px;
+    }
+    .percentage-div {
+      position: absolute;
+      right: 2px;
+      top: -20px;
+      .ring {
+        position: relative;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        outline: 2px solid #ddd;
+        .percent {
+          position: absolute;
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          background-color: #ddd;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          @include flex-center;
+          > .vote-average {
+            display: flex;
+            font-size: 9px;
+            font-weight: bold;
+            color: #222;
+            &::before {
+              content: attr(data-percent);
+              font-weight: bold;
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.form {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 63px;
+  .outline {
+    flex: 1;
+    width: 100%;
+    display: inline-block;
+    border: 3px solid var(--accent);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .search {
+    padding: 10px;
+    border: none;
+    width: 100%;
+    background: 0 0;
+    color: var(--text);
+  }
+  .serach-icon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+  }
+}
